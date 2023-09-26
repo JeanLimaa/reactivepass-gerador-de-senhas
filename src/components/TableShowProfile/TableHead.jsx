@@ -1,0 +1,24 @@
+export default function TableHead(){
+    return(
+        <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                Exibir
+            </th>
+            <td>
+                Copiar
+            </td>
+            <td>Excluir</td>
+        </tr>
+    </thead>
+    )
+}
