@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/Buttons/DefaultButton";
+import AuthButton from "@/components/Buttons/AuthButton";
 import Input from "@/components/Inputs/FormInput";
 import Link from "next/link";
 import { Formik, Form } from "formik";
@@ -94,15 +94,11 @@ export default function Register() {
             <Input label="Nome" name="name" required />
             <Input name="email" type="email" required />
             <Input label="Senha" name="password" type="password" required autoComplete="off" />
-            <Button
-              type="submit"
-              text={isFormSubmitting ? "Carregando..." : "Inscrever-se"}
-              disabled={isFormSubmitting}
-              className="bg-green-500 text-white rounded p-2 cursor-pointer"
-            />
+
             {!values.name && !values.email && !values.password && error && (
               <span className="text-red-500 text-sm text-center">{error}</span>
             )}
+            <AuthButton text="Registrar-se" isFormSubmitting={isFormSubmitting}/>
             <span className="text-xs text-zinc-500">
               Já possui uma conta?
               <strong className="text-zinc-700">
