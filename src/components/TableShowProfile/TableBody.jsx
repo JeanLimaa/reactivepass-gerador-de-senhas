@@ -9,6 +9,7 @@ export default function TableBody({ setToastSuccess }) {
     //modal
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+    const [deletingIndex, setDeletingIndex] = useState(null);
 
     useEffect(() => {
         axios
@@ -39,6 +40,41 @@ export default function TableBody({ setToastSuccess }) {
             }));
         }, 3 * 1000);
     };
+
+    const handleDeletePassword = async (index) => {
+        toggle()
+        try {
+            await fetch("/api/deletePassword", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    index: index,
+                }),
+            }).then(async (res) => {
+                const result = await res.json();
+
+                if (result.status === 201) {
+                    setDataFromServer((prevData) => {
+                        const newData = [...prevData];
+                        newData.splice(index, 1);
+                        return newData;
+                    });
+                    setToastSuccess(true)
+                    setTimeout(() => {
+                        setToastSuccess(false)
+                    }, 3 * 1000)
+                } else {
+                    alert(result.message)
+                    //Ffazer algo
+                }
+
+            });
+        } catch {
+            //Ffazer algo
+        }
+    }
 
     if (dataFromServer.length === 0) {
         //elaborar uma tela melhor
@@ -94,6 +130,7 @@ export default function TableBody({ setToastSuccess }) {
                                 <img src="/trash.svg" alt="Excluir a senha" title="Excluir"
                                     className="cursor-pointer"
                                     onClick={() => {
+                                        setDeletingIndex(index);
                                         toggle()
                                         setModal(true)
                                     }}//onClick={() => handleDeletePassword(index)}
@@ -104,10 +141,9 @@ export default function TableBody({ setToastSuccess }) {
                             passwordView={item.password}
                             isOpen={modal}
                             toggle={toggle}
-                            index={index}
-                            labelPassword={item.labelPassword}
-                            setDataFromServer={setDataFromServer}
+                            index={deletingIndex}
                             setToastSuccess={setToastSuccess}
+                            setDataFromServer={setDataFromServer}
                         />
                     </>
                 ))}

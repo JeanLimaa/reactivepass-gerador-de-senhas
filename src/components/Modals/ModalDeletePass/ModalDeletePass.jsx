@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from '@/components/Buttons/Button'
 
-export default function ModalDeletePass({labelPassword, index, isOpen, toggle, setDataFromServer, setToastSuccess}) {
+export default function ModalDeletePass({index, isOpen, toggle, setDataFromServer, setToastSuccess}) {
 
     const handleDeletePassword = async (index) => {
         toggle()
@@ -44,7 +44,7 @@ export default function ModalDeletePass({labelPassword, index, isOpen, toggle, s
       <Modal isOpen={isOpen} toggle={toggle}>
         <ModalHeader toggle={toggle}>Excluir senha do perfil</ModalHeader>
         <ModalBody>
-          <h2>Tem certeza de que deseja excluir a senha com o label {labelPassword} de índice {index + 1}?</h2>
+          <h2 className='text-lg font-medium'>Tem certeza de que deseja excluir a senha de índice {index + 1}?</h2>
         </ModalBody>
         <ModalFooter>
           <Button text="Excluir" className="bg-red-600 hover:bg-red-700" onClick={() => handleDeletePassword(index)} />

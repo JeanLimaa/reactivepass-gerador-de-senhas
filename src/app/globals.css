@@ -40,8 +40,8 @@ body {
     font-size: 80%;
   }
 }
-/* @media (max-width: 375px) {
+@media (max-width: 375px) {
   html {
     font-size: 69.5%;
   }
-} */
+}

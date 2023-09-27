@@ -12,10 +12,10 @@ export default function Header() {
     return (
       <HeaderComponent>
         <Link href="/">
-          <h2 className="text-xl">Reactive Generator</h2>
+          <h2 className="text-xl">ReactivePass</h2>
         </Link>
         <nav className='flex gap-6 items-center'>
-          <Link href="/login" className="bg-green-300 p-2 rounded-md hover:bg-green-400 hover:text-white duration-custom delay-custom">
+          <Link href="/login" className="bg-blue-400 p-2 rounded-md hover:bg-blue-500 hover:text-white duration-custom delay-custom">
             Sign in
           </Link>
           <Link href="/register"
@@ -30,19 +30,19 @@ export default function Header() {
   return (
     <HeaderComponent>
       <Link href="/">
-        <h2 className="text-xl">Reactive Generator</h2>
+        <h2 className="text-xl">ReactivePass</h2>
       </Link>
       <nav className='flex gap-6'>
         <Link href="/profile">
           <span className="bg-orange-400 hover:bg-orange-500 items-center px-3 rounded-md p-2 flex gap-2 cursor-pointer">
             <img src="/user.svg" alt="perfil" title="Perfil" />
-            <h3>
-              {`${session?.user?.name.split(" ")[0].toLocaleUpperCase()}`}
+            <h3 className="capitalize">
+              {`${session?.user?.name.split(" ")[0]}`}
             </h3>
           </span>
         </Link>
         <Button
-          text="Logout"
+          text="Sign out"
           className="bg-red-600 hover:bg-red-700 text-white rounded px-4 cursor-pointer"
           onClick={() => signOut()}
         />

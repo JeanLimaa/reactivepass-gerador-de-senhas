@@ -1,10 +1,10 @@
 'use client'
 import { Spinner } from "reactstrap"
 
-export default function SpinnerProfile({width, heigth}){
+export default function SpinnerGlobal({color, width, heigth}){
     return (
         <Spinner
-            color="info"
+            color={color}
             style={{
                 height: width,
                 width: heigth
