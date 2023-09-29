@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
     return (
@@ -13,16 +14,15 @@ export default function Footer() {
             <div className="flex flex-col gap-1">
                 {/* midias sociais */}
                 <h2 className="text-md mb-2 font-medium font-sans max-sm:text-base">Desenvolvido por Jean Lima.</h2>
-                <nav className="flex gap-4">
-                    <img src="/contact.svg" alt="Contatos de Jean" title="Contatos de Jean" width="1" height="1" />
+                <nav className="flex gap-4 justify-center">
                     <Link target="_blank" href="mailto:jeansantoslima17@gmail.com" className="w-9">
-                        <img src="/email.svg" alt="Email de Jean" title="Email de Jean" />
+                        <Image src="/email.svg" alt="Email de Jean" title="Email de Jean" layout="responsive" height={100} width={100} />
                     </Link>
                     <Link target="_blank" href="https://github.com/JeanLimaa" className="w-9">
-                        <img src="/github.svg" alt="Github de Jean" title="Github de Jean" />
+                        <Image src="/github.svg" alt="Github de Jean" title="Github de Jean" layout="responsive" height={100} width={100} />
                     </Link>
                     <Link target="_blank" href="https://www.linkedin.com/in/jeanlimaa/" className="w-9">
-                        <img src="/linkedin.svg" alt="Linkedin de Jean" title="Linkedin de Jean" />
+                        <Image src="/linkedin.svg" alt="Linkedin de Jean" title="Linkedin de Jean" layout="responsive" height={100} width={100} />
                     </Link>
                 </nav>
             </div>

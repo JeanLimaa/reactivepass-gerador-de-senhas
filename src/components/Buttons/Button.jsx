@@ -1,5 +1,3 @@
-'use client'
-
 export default function Button({className, text, disabled, onClick, titleHelpCircle, altHelpCircle, type}){
     const color = "bg-orange-400 hover:bg-orange-500"
     return(

@@ -1,5 +1,4 @@
 'use client'
-import Link from "next/link";
 import React from "react";
 import HeaderComponent from "./HeaderComponent";
 import LinkComponent from "./LinkComponent";
@@ -11,10 +10,7 @@ export default function Header() {
   if (status !== 'authenticated') {
     return (
       <HeaderComponent>
-        <Link href="/">
-          <h2 className="text-xl">ReactivePass</h2>
-        </Link>
-        <nav className='flex gap-6 items-center'>
+        <nav className='flex gap-6 max-[425px]:gap-3'>
           <LinkComponent href="/login"
             color="bg-blue-400 hover:bg-blue-500"
             imgSrc="/login.svg"
@@ -36,10 +32,7 @@ export default function Header() {
 
   return (
     <HeaderComponent>
-      <Link href="/">
-        <h2 className="text-xl">ReactivePass</h2>
-      </Link>
-      <nav className='flex gap-6'>
+      <nav className='flex gap-6 max-[425px]:gap-3'>
         <LinkComponent href="/profile"
           capitalize={true}
           color="bg-orange-400 hover:bg-orange-500"

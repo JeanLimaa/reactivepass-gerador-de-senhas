@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Input({ name, label, type, required, ...props }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <label className="capitalize">
         {label || name} <span className="text-red-500">{required && "*"}</span>
       </label>
