@@ -24,11 +24,11 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
     const userEmail = session.user.email;
     const passwordData = {
       passwordGenerated: valuePass,
-      userEmail: userEmail,
+      email: userEmail,
       labelPassword: labelPassword,
     };
 
-    await axios.post('http://localhost:3001/savepass', passwordData)
+    await axios.post('/api/savepass', passwordData)
       .then(response => {
         console.log(response.data);
         toggle()

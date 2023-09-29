@@ -3,7 +3,7 @@ import connect from '@/utils/db';
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
-export async function POST(req) {
+export async function DELETE(req) {
     try {
         //req do index desejado para o delete
         const { index } = await req.json();
@@ -17,15 +17,13 @@ export async function POST(req) {
         
         //buscar usuario
         const user = await User.findOne({ email });
-
+        
+        //deletar senha
         const deletePasswordId = user.storePasswords[index].id
-        const deletePassword = user.storePasswords[0]
-
         await User.findOneAndUpdate({ email }, { $pull: { storePasswords: { _id: deletePasswordId } } });
-
-        //await User.findOneAndDelete( {deletePassword} )
-        return NextResponse.json({ message: `Sucesso. ${index}`, status: 201 })
+        await user.save();
+        return NextResponse.json({ message: `Senha excluida com sucesso. ${index}`, status: 201 })
     } catch (error) {
-        return NextResponse.json({ message: error, status: 500 })
+        return NextResponse.json({ message: `Erro ao excluir a senha: ${error}`, status: 500 })
     }
 }

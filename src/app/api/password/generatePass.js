@@ -1,6 +1,8 @@
-const crypto = require('crypto');
+/* const crypto = require('crypto');
+ */
+import crypto from 'crypto';
 
-function generatePass(length, setUpperCase, setLowerCase, setNumber, setSymbols, maxAttemps = 10) {
+export default function generatePass(length, setUpperCase, setLowerCase, setNumber, setSymbols, maxAttemps = 10) {
 
   const characters = [
     setUpperCase ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : '',
@@ -48,4 +50,4 @@ while(true){
   }
 }
 
-module.exports = generatePass;
+/* module.exports = generatePass; */

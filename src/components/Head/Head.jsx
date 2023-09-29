@@ -9,6 +9,7 @@ export default function Head({metadata}) {
             <meta property="og:title" content={metadata.title} />
             <meta property="og:description" content={metadata.description} />
             <meta property="og:url" content={metadata.ogUrl} />
+            <link rel="icon" href="/lock.svg" />
         </head>
     )
 }

@@ -11,7 +11,7 @@ export default function ModalDeletePass({index, isOpen, toggle, setDataFromServe
       toggle()
         try {
             await fetch("/api/deletePassword", {
-                method: "POST",
+                method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
                 },

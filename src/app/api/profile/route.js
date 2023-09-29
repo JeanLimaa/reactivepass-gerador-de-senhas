@@ -2,7 +2,7 @@ import User from '@/models/User'
 import { NextResponse } from 'next/server';
 import connect from '@/utils/db';
 import { getToken } from 'next-auth/jwt';
-const crypto = require('crypto')
+import crypto from 'crypto';
 
 //Parametros para criptografia da senha
 const secret = process.env.PASS_SECRET
@@ -15,21 +15,17 @@ const DATE_CYPHER = {
 
 export async function GET(req) {
     await connect()
-
     try {
-/*         const teste = await getToken({req: req, raw: true});
-        console.log(teste) */
         const token = await getToken({ req });
         
         if (!token) {
             return NextResponse.json({ message: 'Usuario não está logado.' });
         }
         const email = token?.email;
-        //console.log(token)
         //buscar user
         const user = await User.findOne({ email })
         const listPassword = user.storePasswords
-
+        
         //Descriptografia
         const decryptPasswordArray = listPassword.map((data) => {
             const decipher = crypto.createDecipher(DATE_CYPHER.algoritmo, DATE_CYPHER.secret);
