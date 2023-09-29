@@ -19,7 +19,6 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
   async function handleSavePassword(ev) {
     ev.preventDefault();
     setIsFormSubmitting(true)
-    console.log("foi no submit")
 
     const userEmail = session.user.email;
     const passwordData = {

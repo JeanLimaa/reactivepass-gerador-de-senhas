@@ -13,16 +13,21 @@ export default function TableBody({ setToastSuccess }) {
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
 
-/*      useEffect(() => {
-                   axios
-                    .get('/api/profile')   
-        fetch('/api/profile')
+    const fetchApi = async () => {
+        try {
+            await fetch('/api/profile')
             .then((response) => response.json())
             .then((data) => {
                 setDataFromServer(data);
             })
             .catch((err) => console.log(err));
-    }, []) */
+        } catch (error) {
+            console.log(err)
+        } 
+    }
+     useEffect(() => {
+        fetchApi()
+    }, []) 
  
     const handleTogglePass = (index) => {
         setViewPass((prevState) => ({
@@ -44,8 +49,6 @@ export default function TableBody({ setToastSuccess }) {
             }));
         }, 3 * 1000);
     };
-   
-    console.log(dataFromServer)
 
     if (dataFromServer.length === 0) {
         //elaborar uma tela melhor
