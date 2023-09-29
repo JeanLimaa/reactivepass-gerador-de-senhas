@@ -8,9 +8,7 @@ import { useState } from "react";
 
 export default function TableProfile() {
     const [isToastOpen, setIsToastOpen] = useState(false)
-/*     return(
-            <h1 className="text-4xl text-center font-serif">Oops... Você ainda não salvou nada aqui.</h1>
-    ) */
+    
     return (
         <>
             <Table

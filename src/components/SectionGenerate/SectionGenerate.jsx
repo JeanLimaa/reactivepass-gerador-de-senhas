@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "../Buttons/Button"
 import generatePass from "@/app/api/password/generatePass"
 import CheckboxPersonalize from "./CheckboxPersonalize"
@@ -64,6 +64,11 @@ export default function SectionGenerate() {
     function handleCheckboxChange(name, isChecked) {
         setCheckboxState({ ...checkboxState, [name]: isChecked });
     }
+    //gerar uma nova senha sempre que der reload
+    useEffect(() => {
+        setValuePass(generatePassword(passLength))
+    }, [])
+
     return (
         <>
             <section id="section-generate">
@@ -93,14 +98,16 @@ export default function SectionGenerate() {
                             id="passwordGenerated"
                             className="w-full h-14 rounded-md bg-white border-gray-200 p-4"
                             onChange={ev => handleValuePass(ev)}
-
                         />
-                        
-                        <img src={copiedStatus ? "./success.svg" : "./copy2.svg"}
+                        <img src="/refresh.svg" alt="gerar nova senha" title="gerar nova senha" className="absolute right-0 pr-12 cursor-pointer" 
+                        onClick={() => setValuePass(generatePassword(passLength))}
+                        />
+                        <img src={copiedStatus ? "/success.svg" : "./copy2.svg"}
                             alt="copy"
                             className="absolute right-0 pr-4 cursor-pointer"
                             title="Copiar senha"
                             onClick={() => handleCopyCliboard()} />
+                        
                     </div>
                     <div className="flex w-3/5 gap-16">
                         <Button text="Gerar" type="button" onClick={() =>

@@ -1,14 +1,14 @@
-"use client";
-import { signOut, useSession } from "next-auth/react";
+'use client'
 import Link from "next/link";
 import React from "react";
 import HeaderComponent from "./HeaderComponent";
 import LinkComponent from "./LinkComponent";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
   const { status, data: session } = useSession();
-  
-  if (status !== "authenticated") {
+
+  if (status !== 'authenticated') {
     return (
       <HeaderComponent>
         <Link href="/">
@@ -49,9 +49,9 @@ export default function Header() {
         </LinkComponent>
         <LinkComponent href=""
           color="bg-red-500 hover:bg-red-600"
-          onClick={() => signOut()}
           imgSrc="/logout.svg"
           titleImg="Sair"
+          logoff={true}
         >
           Logout
         </LinkComponent>

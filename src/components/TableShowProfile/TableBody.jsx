@@ -11,10 +11,10 @@ export default function TableBody({ setToastSuccess }) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
-
+    
     useEffect(() => {
         axios
-            .get('http://localhost:3000/api/profile')
+            .get('/api/profile')
             .then((res) => {
                 setDataFromServer(res.data);
             })

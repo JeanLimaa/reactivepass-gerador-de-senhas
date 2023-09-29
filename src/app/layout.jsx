@@ -15,12 +15,12 @@ export const metadata = {
   description: "Gerador de senhas seguras.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <AuthProvider>
         <body className={`${poppins.className}`}>
-          <Header />
+          <Header  />
           {children}
           <Footer />
         </body>
