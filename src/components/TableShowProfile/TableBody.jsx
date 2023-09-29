@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from "react";
-import axios from "axios";
 import ModalDeletePass from "../Modals/ModalDeletePass/ModalDeletePass";
 import ToastSucess from "../Toast/Toast";
 import Image from "next/image";
@@ -14,15 +13,17 @@ export default function TableBody({ setToastSuccess }) {
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
 
-    useEffect(() => {
-        axios
-            .get('/api/profile')
-            .then((res) => {
-                setDataFromServer(res.data);
+/*      useEffect(() => {
+                   axios
+                    .get('/api/profile')   
+        fetch('/api/profile')
+            .then((response) => response.json())
+            .then((data) => {
+                setDataFromServer(data);
             })
             .catch((err) => console.log(err));
-    }, []);
-
+    }, []) */
+ 
     const handleTogglePass = (index) => {
         setViewPass((prevState) => ({
             ...prevState,
@@ -43,6 +44,8 @@ export default function TableBody({ setToastSuccess }) {
             }));
         }, 3 * 1000);
     };
+   
+    console.log(dataFromServer)
 
     if (dataFromServer.length === 0) {
         //elaborar uma tela melhor
