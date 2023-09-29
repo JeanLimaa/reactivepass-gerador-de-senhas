@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ModalDeletePass from "../Modals/ModalDeletePass/ModalDeletePass";
+import ToastSucess from "../Toast/Toast";
 
 export default function TableBody({ setToastSuccess }) {
     const [viewPass, setViewPass] = useState({});
@@ -41,55 +42,14 @@ export default function TableBody({ setToastSuccess }) {
         }, 3 * 1000);
     };
 
-    const handleDeletePassword = async (index) => {
-        toggle()
-        try {
-            await fetch("/api/deletePassword", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    index: index,
-                }),
-            }).then(async (res) => {
-                const result = await res.json();
-
-                if (result.status === 201) {
-                    setDataFromServer((prevData) => {
-                        const newData = [...prevData];
-                        newData.splice(index, 1);
-                        return newData;
-                    });
-                    setToastSuccess(true)
-                    setTimeout(() => {
-                        setToastSuccess(false)
-                    }, 3 * 1000)
-                } else {
-                    alert(result.message)
-                    //Ffazer algo
-                }
-
-            });
-        } catch {
-            //Ffazer algo
-        }
-    }
-
     if (dataFromServer.length === 0) {
         //elaborar uma tela melhor
         return (
-            <>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Exemplo</td>
-                        <td>123</td>
-                        <td>Vazio</td>
-                        <td>Vazio</td>
-                    </tr>
-                </tbody>
-            </>
+            <ToastSucess
+                isToastOpen={true}
+                fail="Nenhuma senha salva, no momento."
+                text="Você deve salvar uma senha para que ela possa ser exibida aqui." 
+            />
         )
     }
 

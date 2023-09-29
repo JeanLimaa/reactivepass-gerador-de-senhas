@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import AuthButton from "@/components/Buttons/AuthButton";
+import AuthButton from "@/components/Buttons/LoadingButton";
 import AuthPageLayout from "@/components/AuthPage/AuthPageLayout";
 
 export default function Login() {

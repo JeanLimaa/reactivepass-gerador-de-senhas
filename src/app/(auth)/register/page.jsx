@@ -1,12 +1,12 @@
 "use client";
-import AuthButton from "@/components/Buttons/AuthButton";
+import AuthButton from "@/components/Buttons/LoadingButton";
 import Input from "@/components/Inputs/FormInput";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import ToastSucess from "@/components/Toast/ToastSucess";
+import ToastSucess from "@/components/Toast/Toast";
 import AuthPageLayout from "@/components/AuthPage/AuthPageLayout";
 
 export default function Register() {

@@ -30,6 +30,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
 @media (max-width: 1024px) {
   html{
     font-size: 84.5%;

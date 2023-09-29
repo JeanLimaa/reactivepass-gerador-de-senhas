@@ -5,18 +5,20 @@ import Button from '../../Buttons/Button';
 import { useSession } from "next-auth/react"
 import axios from 'axios';
 import LabelInput from './LabelInput';
-
+import LoadingButton from '@/components/Buttons/LoadingButton';
 
 function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...args }) {
   const { data: session } = useSession();
   const [modal, setModal] = useState(false);
   const [labelPassword, setLabelPassword] = useState('');
   const [passwordExists, setPasswordExists] = useState(false);
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
   const toggle = () => setModal(!modal);
 
-  function handleSavePassword(ev) {
+  async function handleSavePassword(ev) {
     ev.preventDefault();
+    setIsFormSubmitting(true)
     console.log("foi no submit")
 
     const userEmail = session.user.email;
@@ -25,8 +27,8 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
       userEmail: userEmail,
       labelPassword: labelPassword,
     };
-    
-    axios.post('http://localhost:3001/savepass', passwordData)
+
+    await axios.post('http://localhost:3001/savepass', passwordData)
       .then(response => {
         console.log(response.data);
         toggle()
@@ -48,11 +50,13 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
         }
         setLabelPassword('');
       });
+      
+      setIsFormSubmitting(false)
   }
-    function handleChangeText(e){
-      setLabelPassword(e.target.value);
-      setPasswordExists(false)
-    }
+  function handleChangeText(e) {
+    setLabelPassword(e.target.value);
+    setPasswordExists(false)
+  }
   return (
     <>
       <Button onClick={toggle}
@@ -68,26 +72,27 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
           <h2 className='text-base font-medium'>Esse nome ficará atrelada a sua senha para facilitar com que você reconheça para qual fim ela é utilizada!</h2>
           <p className='text-red-400'>OBS: Caso não queira escolher um nome, será atribuido o nome "Generic".</p>
         </ModalBody>
-        
-        <LabelInput 
+
+        <LabelInput
           passwordExists={passwordExists}
           name="nameForPassword"
           text="Nome para a senha: "
           onChange={handleChangeText}
         />
-        <LabelInput 
+        <LabelInput
           name="passworDisplay"
           text="Sua senha: "
           value={valuePass}
           disabled={true}
         />
         <ModalFooter>
-          <Button text="Confirmar" onClick={handleSavePassword} type="submit" />{' '}
+          <LoadingButton text="Confirmar" onClick={handleSavePassword} isFormSubmitting={isFormSubmitting} />{' '}
+          {/* <Button text="Confirmar" onClick={handleSavePassword} type="submit" />{' '} */}
           <Button text="Cancelar" onClick={() => {
             toggle();
             setPasswordExists(false);
           }
-        }
+          }
           />
         </ModalFooter>
       </Modal>

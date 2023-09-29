@@ -17,8 +17,10 @@ export async function GET(req) {
     await connect()
 
     try {
+/*         const teste = await getToken({req: req, raw: true});
+        console.log(teste) */
         const token = await getToken({ req });
-
+        
         if (!token) {
             return NextResponse.json({ message: 'Usuario não está logado.' });
         }

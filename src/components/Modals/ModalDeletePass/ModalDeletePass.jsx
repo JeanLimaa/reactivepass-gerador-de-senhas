@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from '@/components/Buttons/Button'
+import LoadingButton from '@/components/Buttons/LoadingButton';
 
 export default function ModalDeletePass({index, isOpen, toggle, setDataFromServer, setToastSuccess}) {
+    const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
     const handleDeletePassword = async (index) => {
-        toggle()
+      setIsFormSubmitting(true)  
+      toggle()
         try {
             await fetch("/api/deletePassword", {
                 method: "POST",
@@ -34,9 +37,11 @@ export default function ModalDeletePass({index, isOpen, toggle, setDataFromServe
                 }
 
             });
-        } catch {
+        } catch(err) {
             //Ffazer algo
+            console.log(err)
         }
+        setIsFormSubmitting(false)
     }
 
   return (
@@ -47,7 +52,7 @@ export default function ModalDeletePass({index, isOpen, toggle, setDataFromServe
           <h2 className='text-lg font-medium'>Tem certeza de que deseja excluir a senha de índice {index + 1}?</h2>
         </ModalBody>
         <ModalFooter>
-          <Button text="Excluir" className="bg-red-600 hover:bg-red-700" onClick={() => handleDeletePassword(index)} />
+          <LoadingButton text="Excluir" color="bg-red-600 hover:bg-red-700" isFormSubmitting={isFormSubmitting} onClick={() => handleDeletePassword(index)} />
           <Button text="Cancelar" onClick={toggle} />
         </ModalFooter>
       </Modal>

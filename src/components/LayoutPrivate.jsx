@@ -18,5 +18,5 @@ export default function LayoutPrivate({ children }) {
     return null;
   }
 
-  return <div className="min-h-screen">{children}</div>;
+  return <div className="min-h-[70vh]">{children}</div>;
 }

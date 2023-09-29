@@ -5,7 +5,7 @@ import generatePass from "@/app/api/password/generatePass"
 import CheckboxPersonalize from "./CheckboxPersonalize"
 import { useSession } from "next-auth/react"
 import ModalSavePass from "@/components/Modals/ModalSavePass/ModalSavePass";
-import ToastSucessSavePass from '../Toast/ToastSucess';
+import ToastSucessSavePass from '../Toast/Toast';
 
 export default function SectionGenerate() {
     const { status } = useSession();

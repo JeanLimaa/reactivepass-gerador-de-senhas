@@ -17,7 +17,7 @@ export default function CheckboxPersonalize({ name, label, onCheckBoxChange }) {
                 id={name}
                 checked={checkbox || false}
                 onChange={handleCheckbox}
-                className="w-5 hover:bg-orange-400 bg-orange-500 cursor-pointer"
+                className="w-5 hover:bg-orange-400 bg-orange-500 cursor-pointer  "
             />
             <span> {label}</span>
         </div>

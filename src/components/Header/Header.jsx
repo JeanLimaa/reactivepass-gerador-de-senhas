@@ -2,12 +2,12 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
-import Button from "../Buttons/DefaultButton";
 import HeaderComponent from "./HeaderComponent";
+import LinkComponent from "./LinkComponent";
 
 export default function Header() {
   const { status, data: session } = useSession();
-
+  
   if (status !== "authenticated") {
     return (
       <HeaderComponent>
@@ -15,13 +15,20 @@ export default function Header() {
           <h2 className="text-xl">ReactivePass</h2>
         </Link>
         <nav className='flex gap-6 items-center'>
-          <Link href="/login" className="bg-blue-400 p-2 rounded-md hover:bg-blue-500 hover:text-white duration-custom delay-custom">
-            Sign in
-          </Link>
-          <Link href="/register"
-            className="bg-orange-400 p-2 rounded-md hover:bg-orange-500 hover:text-white duration-custom delay-custom">
+          <LinkComponent href="/login"
+            color="bg-blue-400 hover:bg-blue-500"
+            imgSrc="/login.svg"
+            titleImg="Logar"
+          >
+            Sign In
+          </LinkComponent>
+          <LinkComponent href="/register"
+            color="bg-orange-400 p-2 hover:bg-orange-500"
+            imgSrc="/register.svg"
+            titleImg="Registrar"
+          >
             Sign Up
-          </Link>
+          </LinkComponent>
         </nav>
       </HeaderComponent>
     )
@@ -33,19 +40,21 @@ export default function Header() {
         <h2 className="text-xl">ReactivePass</h2>
       </Link>
       <nav className='flex gap-6'>
-        <Link href="/profile">
-          <span className="bg-orange-400 hover:bg-orange-500 items-center px-3 rounded-md p-2 flex gap-2 cursor-pointer">
-            <img src="/user.svg" alt="perfil" title="Perfil" />
-            <h3 className="capitalize">
-              {`${session?.user?.name.split(" ")[0]}`}
-            </h3>
-          </span>
-        </Link>
-        <Button
-          text="Sign out"
-          className="bg-red-600 hover:bg-red-700 text-white rounded px-4 cursor-pointer"
+        <LinkComponent href="/profile"
+          capitalize={true}
+          color="bg-orange-400 hover:bg-orange-500"
+          imgSrc="/user.svg"
+          titleImg="Perfil">
+          {`${session?.user?.name.split(" ")[0]}`}
+        </LinkComponent>
+        <LinkComponent href=""
+          color="bg-red-500 hover:bg-red-600"
           onClick={() => signOut()}
-        />
+          imgSrc="/logout.svg"
+          titleImg="Sair"
+        >
+          Logout
+        </LinkComponent>
       </nav>
     </HeaderComponent>
   );
