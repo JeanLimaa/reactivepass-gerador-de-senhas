@@ -1,6 +1,6 @@
 import User from '@/models/User';
 import connect from '@/utils/db';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
 export async function POST(req) {

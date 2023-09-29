@@ -2,9 +2,9 @@ import { Poppins } from "next/font/google";
 import AuthProvider from "@/components/AuthProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Head from "@/components/Head/Head";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "./globals.css";
-import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,22 +13,18 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "ReactivePass",
-  description: "Gerador de senhas seguras.",
+  description: "Geração e armazenamento de senhas, de maneira segura.",
+  author: "Jean Lima",
+  locale: "pt-BR",
+  // adicionar url no ato do deploy
+  ogUrl: "URL do Site",
+  keywords: "senhas, passwords, segurança, senhas fortes, senhas seguras, gerador, gerador de senhas, geração de senhas, gerar senhas, armazenamento de senhas, armazenar senhas, salvar senhas"
 };
 
 export default async function RootLayout({ children }) {
   return (
     <html lang="pt-br">
- {/*      <head>
-        <meta name="author" content="Jean Lima" />
-        <meta name="language" content="pt-BR" />
-        <meta name="robots" content="noindex, nofollow" />
-        <meta property="og:locale" content="pt-BR" />
-        <meta property="og:title" content="Título da Página" />
-        <meta property="og:description" content="Descrição da Página" />
-        <meta property="og:image" content="URL da Imagem" />
-        <meta property="og:url" content="URL da Página" />
-      </head> */}
+      <Head metadata={metadata}/>
       <AuthProvider>
         <body className={`${poppins.className}`}>
           <Header />
