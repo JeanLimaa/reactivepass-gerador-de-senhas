@@ -13,9 +13,9 @@ export default function Home() {
           <Link href="#section-generate">
             <Button text="Começar agora" />
           </Link>
-          <Link href="/register" className="text-blue-500">
+{/*           <Link href="/register" className="text-blue-500">
             Cadastrar
-          </Link>
+          </Link> */}
         </div>
       </section>
       <SectionGenerate />

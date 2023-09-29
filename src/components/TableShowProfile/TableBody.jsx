@@ -64,7 +64,7 @@ export default function TableBody({ setToastSuccess }) {
     return (
         <>
             <tbody>
-                {dataFromServer.map((item, index) => (
+                {Array.isArray(dataFromServer) && dataFromServer.map((item, index) => (
                     <>
                         <tr key={index}>
                             <th scope="row">{index + 1}</th>
