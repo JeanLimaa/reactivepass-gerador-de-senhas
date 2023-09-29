@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ModalDeletePass from "../Modals/ModalDeletePass/ModalDeletePass";
 import ToastSucess from "../Toast/Toast";
+import Image from "next/image";
 
 export default function TableBody({ setToastSuccess }) {
     const [viewPass, setViewPass] = useState({});
@@ -11,7 +12,7 @@ export default function TableBody({ setToastSuccess }) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
-    
+
     useEffect(() => {
         axios
             .get('/api/profile')
@@ -48,7 +49,7 @@ export default function TableBody({ setToastSuccess }) {
             <ToastSucess
                 isToastOpen={true}
                 fail="Nenhuma senha salva, no momento."
-                text="Você deve salvar uma senha para que ela possa ser exibida aqui." 
+                text="Você deve salvar uma senha para que ela possa ser exibida aqui."
             />
         )
     }
@@ -67,7 +68,9 @@ export default function TableBody({ setToastSuccess }) {
                                 )}
                             </td>
                             <td>
-                                <img
+                                <Image
+                                    width={100}
+                                    height={100}
                                     src={viewPass[index] ? "/hide.svg" : "/view.svg"}
                                     alt="view password"
                                     title={viewPass[index] ? "Ocultar senha" : "Visualizar senha"}
@@ -76,24 +79,29 @@ export default function TableBody({ setToastSuccess }) {
                                 />
                             </td>
                             <td>
-                                <img
+                                <Image
+                                    width={100}
+                                    height={100}
                                     src={
-                                        copiedStatus[index] ? "./success.svg" : "./copy2.svg"
+                                        copiedStatus[index] ? "/success.svg" : "/copy2.svg"
                                     }
-                                    className="cursor-pointer"
+                                    className="w-7 cursor-pointer"
                                     alt="Copiar"
                                     title="Copiar"
                                     onClick={() => handleCopyClipboard(item.password, index)}
                                 />
                             </td>
                             <td>
-                                <img src="/trash.svg" alt="Excluir a senha" title="Excluir"
-                                    className="cursor-pointer"
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src="/trash.svg" alt="Excluir a senha" title="Excluir"
+                                    className="w-7 cursor-pointer"
                                     onClick={() => {
                                         setDeletingIndex(index);
                                         toggle()
                                         setModal(true)
-                                    }}//onClick={() => handleDeletePassword(index)}
+                                    }}
                                 />
                             </td>
                         </tr>

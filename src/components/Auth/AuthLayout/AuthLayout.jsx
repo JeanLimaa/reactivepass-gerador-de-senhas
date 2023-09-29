@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AuthLayout({ children, typeOfForm }) {
     return (
@@ -18,7 +19,7 @@ export default function AuthLayout({ children, typeOfForm }) {
             <aside className="text-center">
                 <div className="flex items-center ">
                     <h1 className="text-6xl max-xl:text-5xl">ReactivePass</h1>
-                    <img src="/lock.svg" alt="cadeado logo" className="w-14" />
+                    <Image src="/lock.svg" alt="cadeado logo" title="cadado logo" width={100} height={100} className="w-14"/>
                 </div>
                 <h4 className="text-lg max-xl:text-md border-b-2 pb-4">Seja bem vindo! realize seu {typeOfForm === 'login' ? "login" : 'cadastro'}.</h4>
             </aside>

@@ -2,7 +2,7 @@ import { Poppins } from "next/font/google";
 import AuthProvider from "@/components/AuthProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import Head from "@/components/Head/Head";
+import Head from "@/components/Head/HeadComponent";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "./globals.css";
 

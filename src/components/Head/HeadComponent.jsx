@@ -1,6 +1,8 @@
-export default function Head({metadata}) {
+import Head from "next/head"
+
+export default function HeadComponent({metadata}) {
     return (
-        <head>
+        <Head>
             <meta name="robots" content="noindex, nofollow" />
             <meta name="description" content={metadata.description} />
             <meta name="language" content={metadata.locale} />
@@ -10,6 +12,6 @@ export default function Head({metadata}) {
             <meta property="og:description" content={metadata.description} />
             <meta property="og:url" content={metadata.ogUrl} />
             <link rel="icon" href="/lock.svg" />
-        </head>
+        </Head>
     )
 }

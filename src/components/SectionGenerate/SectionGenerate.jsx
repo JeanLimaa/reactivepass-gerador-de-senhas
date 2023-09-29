@@ -12,7 +12,6 @@ export default function SectionGenerate() {
     const { status } = useSession();
     const [copiedStatus, setCopiedStatus] = useState(false)
     const [isToastOpen, setIsToastOpen] = useState(false);
-    const [minCharLength, setMinCharLength] = useState(false);
     const [passLength, setPassLength] = useState(12) //tamanho padrão da senha
     const [checkboxState, setCheckboxState] = useState({ //definindo os estados iniciais das checkbox
         uppercase: true,

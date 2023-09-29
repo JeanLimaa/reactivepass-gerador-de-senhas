@@ -70,7 +70,7 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
         <ModalHeader toggle={toggle}>Escolha um nome para a senha</ModalHeader>
         <ModalBody>
           <h2 className='text-base font-medium'>Esse nome ficará atrelada a sua senha para facilitar com que você reconheça para qual fim ela é utilizada!</h2>
-          <p className='text-red-400'>OBS: Caso não queira escolher um nome, será atribuido o nome "Generic".</p>
+          <p className='text-red-400'>OBS: Caso não queira escolher um nome, será atribuido o nome Generic.</p>
         </ModalBody>
 
         <LabelInput
