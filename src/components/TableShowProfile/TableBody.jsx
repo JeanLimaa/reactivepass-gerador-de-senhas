@@ -3,32 +3,19 @@ import { useState, useEffect } from "react";
 import ModalDeletePass from "../Modals/ModalDeletePass/ModalDeletePass";
 import ToastSucess from "../Toast/Toast";
 import Image from "next/image";
+import {  useFetchPasswords } from "@/services/useFetchPasswords";
+import Loading from "../Loading";
 
 export default function TableBody({ setToastSuccess }) {
     const [viewPass, setViewPass] = useState({});
-    const [dataFromServer, setDataFromServer] = useState([]);
+    //const [dataFromServer, setDataFromServer] = useState([]);
     const [copiedStatus, setCopiedStatus] = useState({});
     //modal
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
+    const { dataFromServer, loading, setDataFromServer } = useFetchPasswords()
 
-    const fetchApi = async () => {
-        try {
-            await fetch('/api/profile')
-            .then((response) => response.json())
-            .then((data) => {
-                setDataFromServer(data);
-            })
-            .catch((err) => console.log(err));
-        } catch (error) {
-            console.log(err)
-        } 
-    }
-     useEffect(() => {
-        fetchApi()
-    }, []) 
- 
     const handleTogglePass = (index) => {
         setViewPass((prevState) => ({
             ...prevState,
@@ -49,6 +36,10 @@ export default function TableBody({ setToastSuccess }) {
             }));
         }, 3 * 1000);
     };
+    
+    if (loading) {
+        return <Loading />;
+    }
 
     if (dataFromServer.length === 0) {
         //elaborar uma tela melhor
@@ -64,7 +55,7 @@ export default function TableBody({ setToastSuccess }) {
     return (
         <>
             <tbody>
-                {Array.isArray(dataFromServer) && dataFromServer.map((item, index) => (
+                {dataFromServer.map((item, index) => (
                     <>
                         <tr key={index}>
                             <th scope="row">{index + 1}</th>
