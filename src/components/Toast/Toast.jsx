@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from "react";
 import { Toast, ToastHeader, ToastBody } from "reactstrap";
 import Image from "next/image";

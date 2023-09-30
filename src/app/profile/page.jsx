@@ -1,3 +1,4 @@
+'use client'
 import TableProfile from "@/components/TableShowProfile/TableProfile";
 import LayoutPrivate from "@/components/LayoutPrivate";
 
