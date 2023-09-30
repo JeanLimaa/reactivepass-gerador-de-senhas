@@ -9,7 +9,7 @@ export const useFetchPasswords = () => {
       try {
         const response = await fetch('/api/profile');
         const data = await response.json();
-        setDataFromServer(data);
+        setDataFromServer(data || []);
         setLoading(false);
       } catch (error) {
         console.error(error);
