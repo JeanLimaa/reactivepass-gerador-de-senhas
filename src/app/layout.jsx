@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 import AuthProvider from "@/components/AuthProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -29,6 +30,7 @@ export default async function RootLayout({ children }) {
         <body className={`${poppins.className}`}>
           <Header />
           {children}
+          <Analytics />
           <Footer />
         </body>
       </AuthProvider>

@@ -14,8 +14,8 @@ const DATE_CYPHER = {
 }
 
 export async function GET(req) {
-    await connect()
     try {
+        await connect()
         const token = await getToken({ req });
         
         if (!token) {

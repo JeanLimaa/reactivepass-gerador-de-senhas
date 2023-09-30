@@ -15,7 +15,7 @@ export default function TableBody({ setToastSuccess }) {
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
     const { dataFromServer, loading, setDataFromServer } = useFetchPasswords()
-
+    console.log(dataFromServer)
     const handleTogglePass = (index) => {
         setViewPass((prevState) => ({
             ...prevState,
@@ -36,7 +36,7 @@ export default function TableBody({ setToastSuccess }) {
             }));
         }, 3 * 1000);
     };
-    
+
     if (loading) {
         return <Loading />;
     }
@@ -112,7 +112,7 @@ export default function TableBody({ setToastSuccess }) {
                             setDataFromServer={setDataFromServer}
                         />
                     </>
-                ))}
+                )) || Array.isArray(dataFromServer)}
             </tbody>
 
         </>
