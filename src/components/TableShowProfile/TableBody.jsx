@@ -1,6 +1,6 @@
 'use client'
 import { useState, } from "react";
-import ModalDeletePass from "../Modals/ModalDeletePass/ModalDeletePass";
+//import ModalDeletePass from "../Modals/ModalDeletePass/ModalDeletePass";
 import ToastSucess from "../Toast/Toast";
 import Image from "next/image";
 import { useFetchPasswords } from "@/hooks/useFetchPasswords";
@@ -106,14 +106,14 @@ export default function TableBody({ setToastSuccess }) {
                                     />
                                 </td>
                             </tr>
-                            <ModalDeletePass
+{/*                             <ModalDeletePass
                                 passwordView={item.password}
                                 isOpen={modal}
                                 toggle={toggle}
                                 index={deletingIndex}
                                 setToastSuccess={setToastSuccess}
                                 setDataFromServer={setDataFromServer}
-                            />
+                            /> */}
                         </>
                     ))}
                 </tbody>

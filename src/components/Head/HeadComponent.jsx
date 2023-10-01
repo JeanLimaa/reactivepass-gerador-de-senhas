@@ -1,4 +1,4 @@
-export default function HeadComponent({metadata}) {
+/* export default function HeadComponent({metadata}) {
     return (
         <head>
             <meta name="robots" content="noindex, nofollow" />
@@ -12,4 +12,4 @@ export default function HeadComponent({metadata}) {
             <link rel="icon" href="/lock.svg" />
         </head>
     )
-}
+} */

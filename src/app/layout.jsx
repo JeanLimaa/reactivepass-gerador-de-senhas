@@ -25,7 +25,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <Head metadata={metadata}/>
+      {/* <Head metadata={metadata}/> */}
       <AuthProvider>
         <body className={`${poppins.className}`}>
           <Header />
