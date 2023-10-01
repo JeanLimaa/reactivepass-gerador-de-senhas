@@ -1,6 +1,6 @@
-import User from "@/models/User";
+import User from "@/app/api/models/User";
 import crypto from 'crypto';
-import connect from '@/utils/db';
+import connect from '@/app/api/utils/db';
 import { NextResponse } from "next/server";
 
 const secret = process.env.PASS_SECRET

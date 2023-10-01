@@ -1,6 +1,6 @@
-import User from '@/models/User'
+import User from "@/app/api/models/User";
 import { NextResponse } from 'next/server';
-import connect from '@/utils/db';
+import connect from '@/app/api/utils/db';
 import { getToken } from 'next-auth/jwt';
 import crypto from 'crypto';
 
@@ -36,10 +36,9 @@ export async function GET(req) {
                 password: DesyncrptPass,
             }
         })
-
         return NextResponse.json(decryptPasswordArray)
     } catch (error) {
         console.log(error)
-        return NextResponse.json({ message: 'Erro ao salvar a senha.' });
+        return NextResponse.json({ message: 'Erro ao buscar.' });
     }
 }

@@ -1,8 +1,8 @@
-import User from "@/models/User";
+import User from "@/app/api/models/User";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import connect from "@/utils/db";
+import connect from "@/app/api/utils/db";
 //import { setCookie } from 'nookies';
 
 const options = NextAuth({
