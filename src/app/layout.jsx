@@ -18,14 +18,14 @@ export const metadata = {
   author: "Jean Lima",
   locale: "pt-BR",
   // adicionar url no ato do deploy
-  ogUrl: "URL do Site",
+  ogUrl: "reactivepass.vercel.app",
   keywords: "senhas, passwords, segurança, senhas fortes, senhas seguras, gerador, gerador de senhas, geração de senhas, gerar senhas, armazenamento de senhas, armazenar senhas, salvar senhas"
 };
 
-export default async function RootLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      {/* <Head metadata={metadata}/> */}
+      <Head metadata={metadata}/>
       <AuthProvider>
         <body className={`${poppins.className}`}>
           <Header />

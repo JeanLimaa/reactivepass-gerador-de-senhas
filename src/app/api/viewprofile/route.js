@@ -14,20 +14,19 @@ const DATE_CYPHER = {
 }
 
 export async function GET(req) {
+    await connect()
+    const token = await getToken({ req });
     try {
-        await connect()
-        const token = await getToken({ req });
-        
         if (!token) {
             return NextResponse.json({ message: 'Usuario não está logado.' });
         }
         const email = token?.email;
         //buscar user
         const user = await User.findOne({ email })
-        const listPassword = user.storePasswords
+        const listPassword = await user.storePasswords;
         
         //Descriptografia
-        const decryptPasswordArray = listPassword.map((data) => {
+        const decryptPasswordArray = await listPassword.map((data) => {
             const decipher = crypto.createDecipher(DATE_CYPHER.algoritmo, DATE_CYPHER.secret);
             let DesyncrptPass = decipher.update(data.password, DATE_CYPHER.type, DATE_CYPHER.codificacao);
             DesyncrptPass += decipher.final(DATE_CYPHER.codificacao);
