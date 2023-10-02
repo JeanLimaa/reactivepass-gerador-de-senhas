@@ -93,7 +93,7 @@ export default function SectionGenerate() {
                         <CheckboxPersonalize label="Letras minúsculas" name="lowercase" isChecked={checkboxState.lowercase} onCheckBoxChange={handleCheckboxChange} />
                         <CheckboxPersonalize label="Números" name="numbers" isChecked={checkboxState.numbers} onCheckBoxChange={handleCheckboxChange} />
                         <CheckboxPersonalize label="Símbolos" name="symbols" isChecked={checkboxState.symbols} onCheckBoxChange={handleCheckboxChange} />
-                        <div className="text-start p-3 bg-gray-50 rounded-lg w-2/3">
+                        <div className="text-start p-3 rounded-lg w-2/3">
                             <h2>Número de caracteres</h2>
                             <div className="flex gap-10 pt-3 items-center">
                                 <input
