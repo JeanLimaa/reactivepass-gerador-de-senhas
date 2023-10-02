@@ -1,7 +1,7 @@
 import AuthLayout from "@/components/Auth/AuthLayout/AuthLayout";
 import RegisterComponent from "@/components/Auth/Register/RegisterComponent";
 
- export const metadata = {
+export const metadata = {
   title: "Cadastro - ReactivePass"
 };  
 

@@ -11,7 +11,7 @@ export default function Home() {
         <span className="text-xl">Você pode armazena-lás aqui, apenas fazendo seu cadastro e as consultando quando desejar!</span>
         <div className="flex items-center gap-6">
           <Link href="#section-generate">
-            <Button text="Começar agora" />
+            <Button text="Começar agora" className="hover:bg-orange-400" />
           </Link>
 {/*           <Link href="/register" className="text-blue-500">
             Cadastrar

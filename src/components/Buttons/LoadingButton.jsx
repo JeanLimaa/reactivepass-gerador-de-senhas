@@ -11,7 +11,7 @@ export default function LoadingButton({text, isFormSubmitting, onClick, color}){
                 )}
                 onClick={onClick}
                 disabled={isFormSubmitting}
-                className={`${color || 'bg-blue-500 hover:bg-blue-600'} w-full duration-custom delay-custom  text-white rounded p-2 cursor-pointer`}
+                className={`${color || 'bg-blue-500 hover:bg-blue-600 text-white'} w-full duration-custom delay-custom rounded p-2 cursor-pointer`}
         />
     )
 }

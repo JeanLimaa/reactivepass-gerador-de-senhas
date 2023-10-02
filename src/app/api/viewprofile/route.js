@@ -1,6 +1,6 @@
-import User from "@/app/api/models/User";
+import User from "@/models/User";
 import { NextResponse } from 'next/server';
-import connect from '@/app/api/utils/db';
+import connect from '@/utils/db';
 import { getToken } from 'next-auth/jwt';
 import crypto from 'crypto';
 
@@ -23,10 +23,10 @@ export async function GET(req) {
         const email = token?.email;
         //buscar user
         const user = await User.findOne({ email })
-        const listPassword = await user.storePasswords;
+        const listPassword = user.storePasswords;
         
         //Descriptografia
-        const decryptPasswordArray = await listPassword.map((data) => {
+        const decryptPasswordArray = listPassword.map((data) => {
             const decipher = crypto.createDecipher(DATE_CYPHER.algoritmo, DATE_CYPHER.secret);
             let DesyncrptPass = decipher.update(data.password, DATE_CYPHER.type, DATE_CYPHER.codificacao);
             DesyncrptPass += decipher.final(DATE_CYPHER.codificacao);

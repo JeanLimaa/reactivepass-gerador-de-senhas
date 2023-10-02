@@ -1,5 +1,5 @@
-import User from "@/app/api/models/User";
-import connect from '@/app/api/utils/db';
+import User from "@/models/User";
+import connect from '@/utils/db';
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 

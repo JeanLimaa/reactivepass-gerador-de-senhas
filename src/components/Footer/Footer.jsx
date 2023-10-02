@@ -16,13 +16,13 @@ export default function Footer() {
                 <h2 className="text-md mb-2 font-medium font-sans max-sm:text-base">Desenvolvido por Jean Lima.</h2>
                 <nav className="flex gap-4 justify-center">
                     <Link target="_blank" href="mailto:jeansantoslima17@gmail.com" className="w-9">
-                        <Image src="/email.svg" alt="Email de Jean" title="Email de Jean" layout="responsive" height={100} width={100} />
+                        <Image src="/email.svg" alt="Email de Jean" title="Email de Jean" height={100} width={100} />
                     </Link>
                     <Link target="_blank" href="https://github.com/JeanLimaa" className="w-9">
-                        <Image src="/github.svg" alt="Github de Jean" title="Github de Jean" layout="responsive" height={100} width={100} />
+                        <Image src="/github.svg" alt="Github de Jean" title="Github de Jean" height={100} width={100} />
                     </Link>
                     <Link target="_blank" href="https://www.linkedin.com/in/jeanlimaa/" className="w-9">
-                        <Image src="/linkedin.svg" alt="Linkedin de Jean" title="Linkedin de Jean" layout="responsive" height={100} width={100} />
+                        <Image src="/linkedin.svg" alt="Linkedin de Jean" title="Linkedin de Jean" height={100} width={100} />
                     </Link>
                 </nav>
             </div>

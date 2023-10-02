@@ -86,7 +86,6 @@ function ModalSavePass({ disabled, valuePass, isToastOpen, setIsToastOpen, ...ar
         />
         <ModalFooter>
           <LoadingButton text="Confirmar" onClick={handleSavePassword} isFormSubmitting={isFormSubmitting} />{' '}
-          {/* <Button text="Confirmar" onClick={handleSavePassword} type="submit" />{' '} */}
           <Button text="Cancelar" onClick={() => {
             toggle();
             setPasswordExists(false);

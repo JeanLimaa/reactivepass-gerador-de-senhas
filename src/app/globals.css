@@ -7,13 +7,15 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-*{
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  
+
 }
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: #333333;
@@ -32,16 +34,60 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  height: 0.5em;
+  position: relative;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* para o Fire Fox */
+#length-pass::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: blue;
+  border: none;
+}
+
+/* para browsers da MS */
+#length-pass::-ms-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: blue;
+  border: none;
+}
+
+#length-pass::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #f97316;
+}
+#length-pass::-webkit-slider-thumb:active,  #length-pass::-webkit-slider-thumb:hover{
+  box-shadow: 0 0 0.5rem #ff3c00;
+  background: #fb923c;
+  transition: ease-in-out 0.5s;
+}
+
 @media (max-width: 1024px) {
-  html{
+  html {
     font-size: 84.5%;
   }
 }
+
 @media (max-width: 425px) {
   html {
     font-size: 80%;
   }
 }
+
 @media (max-width: 375px) {
   html {
     font-size: 69.5%;

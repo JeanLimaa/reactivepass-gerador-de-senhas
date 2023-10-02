@@ -1,23 +1,27 @@
 'use client'
 
-import { useState } from "react"
+/* import { useState } from "react" */
+import Image from "next/image";
 
-export default function CheckboxPersonalize({ name, label, onCheckBoxChange }) {
+export default function CheckboxPersonalize({ name, label, onCheckBoxChange, isChecked }) {
 
-    const [checkbox, setCheckbox] = useState(true);
+    /* const [checkbox, setCheckbox] = useState(true); */
     function handleCheckbox() {
-        setCheckbox(!checkbox)
-        onCheckBoxChange(name, !checkbox)
+        /* setCheckbox(!checkbox) */
+        onCheckBoxChange(name, !isChecked)
     }
 
     return (
-        <div className="flex gap-2 m-3">
-            <input type="checkbox"
+        <div className="flex gap-2 m-3 items-center transition-colors duration-500 ease-in-out">
+            <Image
+                width={100}
+                height={100}
+                src={isChecked ? "/toggle-right.svg" : "/toggle-left.svg"}
                 name={name}
                 id={name}
-                checked={checkbox || false}
-                onChange={handleCheckbox}
-                className="w-5 hover:bg-orange-400 bg-orange-500 cursor-pointer  "
+                checked={isChecked || false}
+                onClick={handleCheckbox}
+                className={`w-12 cursor-pointer`}
             />
             <span> {label}</span>
         </div>
