@@ -9,7 +9,7 @@ Este projeto tem como objetivo principal a geração de senhas fortes e personal
 ## Como utilizar
 
 ### 1ª Tela Inicial
-<img src="https://gifyu.com/image/S6xTh" title="Tela inicial" alt="Tela inicial" height="100" width="100" />
+<img src="https://s6.gifyu.com/images/S6xTh.gif" title="Tela inicial" alt="Tela inicial" height="100" width="100" />
 
 ### 2ª Gerando Senhas
 //captura
