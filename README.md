@@ -9,7 +9,7 @@ Este projeto tem como objetivo principal a geração de senhas fortes e personal
 ## Como utilizar
 
 ### 1ª Tela Inicial
-![Tela Inicial](https://prnt.sc/Bxn0wGgkZXi_)
+![Tela Inicial]([https://prnt.sc/Bxn0wGgkZXi_](https://gifyu.com/image/S6xTh))
 
 ### 2ª Gerando Senhas
 //captura
