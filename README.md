@@ -2,17 +2,20 @@ Esse projeto foi feito utilizando as seguintes tecnologias: MongoDB, Next.js, Ne
 
 Além disso, tem como objetivo a geração de senhas fortes (e personalizaveis), além de permitir o cadastro e login de usuarios, com o proposito de tornar possivel o armazenamento dessas senhas.
 
-1ª Gerando as senhas:
+1ª Tela inicial:
+https://prnt.sc/Bxn0wGgkZXi_
+
+2ª Gerando as senhas:
 //video
 
-2ª Registro:
+3ª Registro:
 //video
 
-3ª Login
+4ª Login:
 //video
 
-4ª Salvando a senha gerada
+5ª Salvando a senha gerada:
 //video
 
-5ª Visualizando as senhas salvas no perfil
+6ª Visualizando as senhas salvas no perfil:
 //video
