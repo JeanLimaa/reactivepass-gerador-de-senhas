@@ -1,21 +1,27 @@
-Esse projeto foi feito utilizando as seguintes tecnologias: MongoDB, Next.js, Next Auth, React.js, Javascript, TailwindCSS e Bootstrap/Reactstrap.
+# ReactivePass
 
-Além disso, tem como objetivo a geração de senhas fortes (e personalizaveis), além de permitir o cadastro e login de usuarios, com o proposito de tornar possivel o armazenamento dessas senhas.
+Este projeto foi desenvolvido utilizando as seguintes tecnologias: MongoDB, Next.js, Next Auth, React.js, JavaScript, Tailwind CSS e Bootstrap/Reactstrap.
 
-1ª Tela inicial:
-https://prnt.sc/Bxn0wGgkZXi_
+## Objetivo
 
-2ª Gerando as senhas:
-//video
+Este projeto tem como objetivo principal a geração de senhas fortes e personalizáveis, bem como o cadastro e login de usuários. A ideia por trás dele é permitir o armazenamento seguro de senhas geradas.
 
-3ª Registro:
-//video
+## Como utilizar
 
-4ª Login:
-//video
+### 1ª Tela Inicial
+![Tela Inicial](https://prnt.sc/Bxn0wGgkZXi_)
 
-5ª Salvando a senha gerada:
-//video
+### 2ª Gerando Senhas
+//captura
 
-6ª Visualizando as senhas salvas no perfil:
-//video
+### 3ª Registro
+//captura
+
+### 4ª Login
+//captura
+
+### 5ª Salvando Senha Gerada
+//captura
+
+### 6ª Visualizando Senhas Salvas no Perfil
+//captra
