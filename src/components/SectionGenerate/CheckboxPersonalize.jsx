@@ -18,6 +18,7 @@ export default function CheckboxPersonalize({ name, label, onCheckBoxChange, isC
                 height={100}
                 src={isChecked ? "/toggle-right.svg" : "/toggle-left.svg"}
                 name={name}
+                alt={name}
                 id={name}
                 checked={isChecked || false}
                 onClick={handleCheckbox}

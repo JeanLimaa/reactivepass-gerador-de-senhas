@@ -7,7 +7,7 @@ export default function HeaderComponent({ children }) {
             <Link href="/" className="flex items-center">
                 <h2 className="text-xl">ReactivePass</h2>
                 <div className="w-6">
-                    <Image src="lock.svg" layout="responsive" alt="logo" width={100} height={100}/>
+                    <Image src="lock.svg" alt="logo" width={100} height={100}/>
                 </div>
             </Link>
             {children}
