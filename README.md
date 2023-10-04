@@ -12,16 +12,16 @@ Este projeto tem como objetivo principal a geração de senhas fortes e personal
 <img src="https://s6.gifyu.com/images/S6xTh.gif" title="Tela inicial" alt="Tela inicial" width="750" heigth="750" />
 
 ### 2ª Gerando Senhas
-//captura
+<img src="" title="Gerando Senhas" alt="Gerando Senhas" width="750" heigth="750" />
 
 ### 3ª Registro
-//captura
+<img src="" title="Registro" alt="Registro" width="750" heigth="750" />
 
 ### 4ª Login
-//captura
+<img src="" title="Login" alt="Login" width="750" heigth="750" />
 
 ### 5ª Salvando Senha Gerada
-//captura
+<img src="" title="Salvando Senha Gerada" alt="Salvando Senha Gerada" width="750" heigth="750" />
 
 ### 6ª Visualizando Senhas Salvas no Perfil
-//captra
+<img src="" title="Visualizando Senhas Salvas no Perfil" alt="Visualizando Senhas Salvas no Perfil" width="750" heigth="750" />
