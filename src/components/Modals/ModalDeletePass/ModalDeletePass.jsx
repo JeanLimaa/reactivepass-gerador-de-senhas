@@ -4,14 +4,14 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from '@/components/Buttons/Button'
 import LoadingButton from '@/components/Buttons/LoadingButton';
 
-export default function ModalDeletePass({index, isOpen, toggle, setDataFromServer, setToastSuccess}) {
+export default function ModalDeletePass({index, isOpen, toggle, setPasswordList, setToastSuccess}) {
     const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
     const handleDeletePassword = async (index) => {
       setIsFormSubmitting(true)  
       toggle()
         try {
-            await fetch("/api/deletePassword", {
+            await fetch("/api/deletepass", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export default function ModalDeletePass({index, isOpen, toggle, setDataFromServe
                 const result = await res.json();
 
                 if (result.status === 201) {
-                    setDataFromServer((prevData) => {
+                    setPasswordList((prevData) => {
                         const newData = [...prevData];
                         newData.splice(index, 1);
                         return newData;
@@ -39,14 +39,13 @@ export default function ModalDeletePass({index, isOpen, toggle, setDataFromServe
 
             });
         } catch(err) {
-            //Ffazer algo
             console.log(err)
         }
         setIsFormSubmitting(false)
     }
 
   return (
-    <div>
+    
       <Modal isOpen={isOpen} toggle={toggle}>
         <ModalHeader toggle={toggle}>Excluir senha do perfil</ModalHeader>
         <ModalBody>
@@ -57,7 +56,6 @@ export default function ModalDeletePass({index, isOpen, toggle, setDataFromServe
           <Button text="Cancelar" onClick={toggle} />
         </ModalFooter>
       </Modal>
-    </div>
+    
   );
 }
-

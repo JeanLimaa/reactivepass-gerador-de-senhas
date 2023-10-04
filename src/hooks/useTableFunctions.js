@@ -8,7 +8,7 @@ export function useTableFunctions(){
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [deletingIndex, setDeletingIndex] = useState(null);
-    const { dataFromServer, loading, setDataFromServer, error } = useFetchPasswords()
+    const { passwordList, loading, setPasswordList, error } = useFetchPasswords()
 
     const handleTogglePass = (index) => {
         setViewPass((prevState) => ({
@@ -32,7 +32,7 @@ export function useTableFunctions(){
     };
 
     return {
-        dataFromServer, loading, setDataFromServer, error, deletingIndex, setDeletingIndex, toggle,
+        passwordList, loading, setPasswordList, error, deletingIndex, setDeletingIndex, toggle,
         modal, setModal, copiedStatus, viewPass, handleTogglePass, handleCopyClipboard
     }
 }

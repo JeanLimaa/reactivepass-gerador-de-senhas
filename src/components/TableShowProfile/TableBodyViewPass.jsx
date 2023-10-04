@@ -6,13 +6,13 @@ import React from "react";
 
 export default function TableBodyViewPass({ setToastSuccess }) {
     const {
-        dataFromServer, setDataFromServer, deletingIndex, setDeletingIndex, toggle,
+        passwordList, setPasswordList, deletingIndex, setDeletingIndex, toggle,
         modal, setModal, copiedStatus, viewPass, handleTogglePass, handleCopyClipboard
     } = useTableFunctions();
-
+    
     return (
         <tbody>
-            {dataFromServer.map((item, index) => (
+            {passwordList.map((item, index) => (
                 <React.Fragment key={index}>
                     <tr key={index}>
                         <th scope="row">{index + 1}</th>
@@ -66,7 +66,7 @@ export default function TableBodyViewPass({ setToastSuccess }) {
                         toggle={toggle}
                         index={deletingIndex}
                         setToastSuccess={setToastSuccess}
-                        setDataFromServer={setDataFromServer}
+                        setPasswordList={setPasswordList}
                     />
                 </React.Fragment>
             ))}

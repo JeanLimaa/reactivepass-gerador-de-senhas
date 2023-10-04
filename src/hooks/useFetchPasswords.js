@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export const useFetchPasswords = () => {
-  const [dataFromServer, setDataFromServer] = useState([]);
+  const [passwordList, setPasswordList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,7 +14,7 @@ export const useFetchPasswords = () => {
         }
         const data = await response.json();
         const updateData = data || []
-        setDataFromServer(updateData);
+        setPasswordList(updateData);
         setIsLoading(false);
       } catch (error) {
         setError(error);
@@ -25,7 +25,5 @@ export const useFetchPasswords = () => {
     fetchData();
   }, []);
 
-/*   if(typeof dataFromServer !== 'undefined' && typeof dataFromServer !== null ){
-  }  */
-  return { dataFromServer, isLoading, error, setDataFromServer };
+  return { passwordList, isLoading, error, setPasswordList };
 };

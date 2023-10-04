@@ -7,6 +7,11 @@ export async function DELETE(req) {
     try {
         //req do index desejado para o delete
         const { index } = await req.json();
+
+        if (isNaN(index) || index < 0) {
+            return NextResponse.json({ message: 'Índice inválido', status: 400 });
+        }
+        
         await connect();
         //Verificar se o usuario está logado e quem é
         const token = await getToken({ req });
@@ -17,11 +22,11 @@ export async function DELETE(req) {
         
         //buscar usuario
         const user = await User.findOne({ email });
-        
-        //deletar senha
+    
+        //pegar senha por id e deletar senha
         const deletePasswordId = user.storePasswords[index].id
         await User.findOneAndUpdate({ email }, { $pull: { storePasswords: { _id: deletePasswordId } } });
-        await user.save();
+        
         return NextResponse.json({ message: `Senha excluida com sucesso. ${index}`, status: 201 })
     } catch (error) {
         return NextResponse.json({ message: `Erro ao excluir a senha: ${error}`, status: 500 })

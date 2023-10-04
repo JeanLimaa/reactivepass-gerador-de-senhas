@@ -3,18 +3,18 @@ import Loading from "../Loading";
 import { useTableFunctions } from "@/hooks/useTableFunctions";
 import TableBodyViewPass from "./TableBodyViewPass";
 
-export default function TableBody() {
-    const { loading, error, dataFromServer } = useTableFunctions();
+export default function TableBody({setToastSuccess}) {
+    const { loading, error, passwordList } = useTableFunctions();
     
-    if (loading) {
-        return <Loading />;
+    if (error) return <h2>Erro: {error.message}</h2>
+
+    if (loading) return <Loading />;
+
+    if (typeof passwordList !== 'undefined' && passwordList !== null) {
+        return <TableBodyViewPass setToastSuccess={setToastSuccess} />;
     }
 
-    if (error) {
-        return <h2>Erro: {error.message}</h2>
-    }
-
-    if (dataFromServer.length === 0) {
+    if (passwordList.length === 0) {
         return (
             <ToastSucess
                 isToastOpen={true}
@@ -22,10 +22,5 @@ export default function TableBody() {
                 text="Você deve salvar uma senha para que ela possa ser exibida aqui."
             />
         )
-    }
-    if (typeof dataFromServer !== 'undefined' && dataFromServer !== null) {
-        return (
-            <TableBodyViewPass />
-        );
     }
 }
