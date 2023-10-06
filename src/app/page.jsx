@@ -1,6 +1,7 @@
 import Link from "next/link"
 import SectionGenerate from "@/components/SectionGenerate/SectionGenerate"
 import Button from "@/components/Buttons/Button";
+import LinkRepository from "@/components/LinkRepository";
 
 export default function Home() {
   return (
@@ -13,9 +14,7 @@ export default function Home() {
           <Link href="#section-generate">
             <Button text="Começar agora" className="hover:bg-orange-400" />
           </Link>
-{/*           <Link href="/register" className="text-blue-500">
-            Cadastrar
-          </Link> */}
+          <LinkRepository />
         </div>
       </section>
       <SectionGenerate />
