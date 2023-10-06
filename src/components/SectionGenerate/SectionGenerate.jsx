@@ -30,7 +30,6 @@ export default function SectionGenerate() {
     useEffect(() => {
         setValuePass(generatePassword(passLength))
     }, [checkboxState])
-
     return (
         <>
             <section id="section-generate">

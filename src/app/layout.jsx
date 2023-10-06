@@ -13,11 +13,10 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "ReactivePass",
-  description: "Geração e armazenamento de senhas, de maneira segura.",
+  title: "ReactivePass - Gerenciamento e Armazenamento de Senhas",
+  description: "Gerenciamento e geração de senhas fortes, de maneira segura. Aqui você pode gerar uma senha personalizavel de maneira fácil e rápida. Além disso, ao registrar uma conta, você poderá armazenar essas senhas aqui mesmo no nosso site.",
   author: "Jean Lima",
   locale: "pt-BR",
-  // adicionar url no ato do deploy
   ogUrl: "reactivepass.vercel.app",
   keywords: "senhas, passwords, segurança, senhas fortes, senhas seguras, gerador, gerador de senhas, geração de senhas, gerar senhas, armazenamento de senhas, armazenar senhas, salvar senhas"
 };

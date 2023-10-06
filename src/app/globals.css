@@ -4,8 +4,6 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 * {
@@ -13,25 +11,15 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: #333333;
-    --background-start-rgb: #333333;
-    --background-end-rgb: #333333;
-  }
-}
- */
 body {
   color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+}
+
+.transformScale:hover{
+  transform: scale(1.08);
+  transition: ease-in-out 0.3s;
 }
 
 input[type=range] {

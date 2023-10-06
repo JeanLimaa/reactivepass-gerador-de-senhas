@@ -12,14 +12,14 @@ export default function Header() {
       <HeaderComponent>
         <nav className='flex gap-6 max-[425px]:gap-3'>
           <LinkComponent href="/login"
-            color="bg-blue-400 hover:bg-blue-500"
+            color="hover:bg-blue-500 bg-blue-400"
             imgSrc="/login.svg"
             titleImg="Logar"
           >
             Sign In
           </LinkComponent>
           <LinkComponent href="/register"
-            color="bg-orange-400 p-2 hover:bg-orange-500"
+            color="bg-orange-400 hover:bg-orange-500"
             imgSrc="/register.svg"
             titleImg="Registrar"
           >

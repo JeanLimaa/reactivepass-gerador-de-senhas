@@ -1,13 +1,8 @@
 'use client'
-
-/* import { useState } from "react" */
 import Image from "next/image";
 
 export default function CheckboxPersonalize({ name, label, onCheckBoxChange, isChecked }) {
-
-    /* const [checkbox, setCheckbox] = useState(true); */
     function handleCheckbox() {
-        /* setCheckbox(!checkbox) */
         onCheckBoxChange(name, !isChecked)
     }
 
