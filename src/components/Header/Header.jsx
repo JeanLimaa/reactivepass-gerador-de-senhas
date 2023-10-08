@@ -12,18 +12,18 @@ export default function Header() {
       <HeaderComponent>
         <nav className='flex gap-6 max-[425px]:gap-3'>
           <LinkComponent href="/login"
-            color="hover:bg-blue-500 bg-blue-400"
+            color="bg-slate-300 hover:bg-slate-400"
             imgSrc="/login.svg"
             titleImg="Logar"
           >
-            Sign In
+            Login
           </LinkComponent>
           <LinkComponent href="/register"
-            color="bg-orange-400 hover:bg-orange-500"
+            color="border-1 border-orange-400 bg-orange-300 hover:bg-orange-400"
             imgSrc="/register.svg"
             titleImg="Registrar"
           >
-            Sign Up
+            Registrar
           </LinkComponent>
         </nav>
       </HeaderComponent>
@@ -35,18 +35,17 @@ export default function Header() {
       <nav className='flex gap-6 max-[425px]:gap-3'>
         <LinkComponent href="/profile"
           capitalize={true}
-          color="bg-orange-400 hover:bg-orange-500"
+          color="bg-slate-300 hover:bg-slate-400"
           imgSrc="/user.svg"
           titleImg="Perfil">
           {`${session?.user?.name.split(" ")[0]}`}
         </LinkComponent>
         <LinkComponent href=""
-          color="bg-red-500 hover:bg-red-600"
+          color="hover:bg-red-600"
           imgSrc="/logout.svg"
           titleImg="Sair"
           logoff={true}
         >
-          Logout
         </LinkComponent>
       </nav>
     </HeaderComponent>
